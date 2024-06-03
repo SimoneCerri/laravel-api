@@ -20,7 +20,7 @@ class ProjectController extends Controller
             //work as well cuz the controler is from Api folder of Laravel
         ] */
 
-        $projects = Project::with('technologies','type')->paginate(5); //care to pass correct name inside with()
+        $projects = Project::with('technologies', 'type')->paginate(5); //care to pass correct name inside with()
         return response()->json([
             'projects' => $projects,
         ]);
@@ -28,19 +28,16 @@ class ProjectController extends Controller
 
     public function show($id)
     {
-        $project = Project::with('technologies','type')->where('id',$id)->first();
-        if($project)
-        {
+        $project = Project::with('technologies', 'type')->where('id', $id)->first();
+        if ($project) {
             return response()->json([
-                'success'=>true,
-                'response'=> $project
+                'success' => true,
+                'response' => $project
             ]);
-        }
-        else 
-        {
+        } else {
             return response()->json([
-                'success'=>false,
-                'response'=> 'Error 404'
+                'success' => false,
+                'response' => 'Error 404'
             ]);
         }
     }
