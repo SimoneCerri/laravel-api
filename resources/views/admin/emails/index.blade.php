@@ -35,13 +35,13 @@
                                 <td scope="row">{{ $email->id }}</td>
                                 <td scope="row">{{ $email->name }}</td>
                                 <td scope="row">{{ $email->email }}</td>
-                                <td scope="row" class="text-center">
-                                    <div class="py-1">
+                                <td scope="row" class="text-center d-flex justify-content-center align-items-center">
+                                    <div class="px-1">
                                         <a class="btn btn-dark" href="{{ route('admin.emails.show', $email) }}">
                                             <i class="fas fa-eye fa-sm fa-fw"></i>
                                         </a>
                                     </div>
-                                    <div class="py-1">
+                                    <div class="px-1">
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                             data-bs-target="#modalId-{{ $email->id }}">
