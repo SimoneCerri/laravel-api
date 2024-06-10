@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\TypeController; //add \Admin to path
 use App\Http\Controllers\Admin\TechnologyController;
+use App\Http\Controllers\EmailController;
 use App\Models\Lead;
 
 /*
@@ -37,6 +38,8 @@ Route::middleware(['auth', 'verified'])
         Route::resource('types', TypeController::class)->parameters(['types' => 'type:slug']);
 
         Route::resource('technologies', TechnologyController::class)->parameters(['technologies' => 'technology:slug']);
+
+        Route::resource('emails', EmailController::class);
     });
 
 Route::middleware('auth')->group(function () {
